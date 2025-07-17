@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZYY Not Dev - APK Premium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800"><!-- Auth Section -->  
+  <div id="auth-section" class="min-h-screen flex items-center justify-center">  
+    <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">  
+      <h2 class="text-xl font-bold mb-4" id="auth-title">Login</h2>  
+      <input type="text" id="username" placeholder="Username" class="w-full p-2 mb-4 border rounded-md" />  
+      <input type="password" id="password" placeholder="Password" class="w-full p-2 mb-4 border rounded-md" />  
+      <button onclick="handleAuth()" class="w-full bg-blue-600 text-white p-2 rounded-md" id="auth-button">Login</button>  
+      <p class="text-sm text-center mt-4">  
+        <span id="toggle-text">Belum punya akun?</span>  
+        <a href="#" onclick="toggleAuthMode()" class="text-blue-600 hover:underline" id="toggle-link">Daftar di sini</a>  
+      </p>  
+    </div>
+</div><!-- MAIN SITE --><div id="main-site" style="display: none;">
+  <main class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4"><!-- WELCOME & NAVIGATION -->
+
+<section id="welcome-section" class="col-span-3 bg-white p-8 rounded-2xl shadow-xl mb-6 text-center">
+  <h2 class="text-3xl font-bold mb-6 text-gray-800">Selamat Datang di Dashboard all Apps Premium Jan Lupa Donasinya🗿!</h2>
+  <div class="flex flex-wrap justify-center gap-4 mb-6">
+    <button onclick="logout()" class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-xl text-lg shadow-md transition-all duration-300">Logout</button>
+    <button onclick="navigateTo('produk')" class="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-6 py-3 rounded-xl text-lg shadow-md transition-all duration-300">Daftar APK</button>
+    <button onclick="navigateTo('reseller')" class="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-6 py-3 rounded-xl text-lg shadow-md transition-all duration-300">Reseller</button>
+    <button onclick="navigateTo('cara-beli')" class="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-6 py-3 rounded-xl text-lg shadow-md transition-all duration-300">Cara Beli</button>
+    <button onclick="navigateTo('kontak')" class="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-6 py-3 rounded-xl text-lg shadow-md transition-all duration-300">Kontak</button>
+  </div>
+  <div class="w-full flex justify-center">
+    <a href="https://saweria.co/igzyyajah" target="_blank" rel="noopener noreferrer"
+       class="bg-gradient-to-r from-yellow-400 to-pink-400 hover:from-yellow-500 hover:to-pink-500 
+       text-white font-bold px-8 py-4 rounded-2xl text-lg shadow-xl transition duration-300 transform hover:scale-105">
+      💖 Dukung Kami via Saweria
+    </a>
+  </div>
+</section>
+
+
+<!-- BACK & LOGOUT BUTTON -->
+<section id="back-logout-section" class="col-span-3 bg-white p-4 rounded-xl shadow mb-4 text-center hidden">
+  <div class="flex flex-wrap justify-center gap-4">
+    <button onclick="showWelcome()" class="bg-gray-700 text-white px-6 py-3 rounded-lg text-lg">⬅ Kembali ke Menu</button>
+    <button onclick="logout()" class="bg-red-600 text-white px-6 py-3 rounded-lg text-lg">Logout</button>
+  </div>
+</section>
+
+<!-- SIDEBAR KIRI -->
+<aside class="bg-white rounded-xl p-4 shadow">
+  <h2 class="text-lg font-semibold mb-2">Selamat Datang!</h2>
+  <p>Gabung menjadi reseller APK Premium dengan margin tinggi dan support full.</p>
+  <div class="mt-4">
+    <h3 class="font-bold">Update Terbaru</h3>
+    <ul class="list-disc ml-5 text-sm text-gray-600">
+      <li>✅ Khusus app prem</li>
+      <li>✅ No eror</li>
+      <li>✅ fitur search</li>
+    </ul>
+    <a class="block mt-3 text-blue-600 hover:underline" href="https://t.me/sectopedia" target="_blank">Join Channel Telegram</a>
+  </div>
+</aside>
+
+<!-- PRODUK SECTION -->
+<section class="bg-white rounded-xl p-4 shadow hidden col-span-2" id="produk">
+  <h2 class="text-lg font-semibold mb-4">Daftar APK Premium</h2>
+  <input type="text" placeholder="Cari APK..." class="w-full p-2 mb-4 border rounded-md" id="search-apk" />
+  
+  <div id="produk-list" class="space-y-4">
+
+    <!-- Produk 1 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="alight motion">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://img1.pixhost.to/images/7255/622648211_malzhost.jpg" alt="Alight Motion"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">Alight Motion Premium</h3>
+        <p style="font-size: 14px; color: #555;">privat 1 year.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp1.500</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp10.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20Am%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>
+
+    <!-- Produk 2 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="youtube">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://img1.pixhost.to/images/7256/622663779_malzhost.jpg" alt="Youtube"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">Youtube Premium</h3>
+        <p style="font-size: 14px; color: #555;">famp 1 month.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp5.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp10.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20Youtube%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>
+
+<!-- Produk 3 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="netflix">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/6wsiw9.jpg" alt="netflix"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">Netflix Premium</h3>
+        <p style="font-size: 14px; color: #555;">1p2u 1 month.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp11.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp15.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20Netflix%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>
+
+<!-- Produk 4 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="getcontact">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/zoxqni.jpg" alt="getcontact"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">Getcontact Premium</h3>
+        <p style="font-size: 14px; color: #555;">privat 1 bulan.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp15.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp20.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20Getcontact%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div> 
+    
+<!-- Produk 5 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="capcut">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/qdzv6x.jpg" alt="capcut"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">Capcut Premium</h3>
+        <p style="font-size: 14px; color: #555;">Shar 1 Bulan.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp20.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp25.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20Getcontact%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>
+    
+<!-- Produk 6 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="spotify">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/rjoiq1.jpg" alt="spotify"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">Spotify Premium</h3>
+        <p style="font-size: 14px; color: #555;">Famp 1 Bulan.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp22.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp25.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20Spotify%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div> 
+<!-- Produk 7 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="canva">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/gbwpi2.jpg" alt="canva"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">Canva Premium</h3>
+        <p style="font-size: 14px; color: #555;">Mem 1 Bulan.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp5.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp10.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20Canva%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>
+    
+<!-- Produk 7 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="bstation">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/eccqg4.jpg" alt="bstation"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">bstation Premium</h3>
+        <p style="font-size: 14px; color: #555;">shar 1 Bulan.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp10.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp15.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20Canva%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>         
+                                                   
+<!-- Produk 8 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="telegram">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/grum9y.jpg" alt="telegram"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">telegram Premium</h3>
+        <p style="font-size: 14px; color: #555;">vialog 1 Bulan.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp58.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp60.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20Canva%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>
+    
+<!-- Produk 8 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="ibis paint x">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/mta6j5.jpg" alt="ibis paint x"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">ibis paint x Premium</h3>
+        <p style="font-size: 14px; color: #555;">shar 1 Bulan.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp20.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp25.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20Canva%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>                                          
+    
+<!-- Produk 9 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="remini">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/kx6pux.jpg" alt="remini"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">Remini Premium</h3>
+        <p style="font-size: 14px; color: #555;">shar apk andro 1 Bulan.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp20.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp25.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20remini%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>                                          
+    
+<!-- Produk 10 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="disney+">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/ib4hfr.jpg" alt="disney+"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">Disney+ Premium</h3>
+        <p style="font-size: 14px; color: #555;">shar 10 user 1 Bulan.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp25.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp30.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20disney%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>                                           
+ 
+ <!-- Produk 11 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="chatgpt">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/1ksu9m.jpg" alt="chatgpt"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">chatgpt Premium</h3>
+        <p style="font-size: 14px; color: #555;">shar 1 Bulan.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp30.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp35.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20chatgpt%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>
+    
+<!-- Produk 12 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="picsart">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/x5wy98.jpg" alt="picsart"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">picsart Premium</h3>
+        <p style="font-size: 14px; color: #555;">shar 1 Bulan.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp5.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp10.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20picsart%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>                                          
+
+<!-- Produk 13 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="wetv">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/1bawu8.jpg" alt="wetv"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">Wetv Premium</h3>
+        <p style="font-size: 14px; color: #555;">shar 8u 1 Bulan.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp10.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp15.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20wetv%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>
+    
+<!-- Produk 14 -->
+    <div class="produk-item border p-4 rounded-xl flex flex-col items-center text-center" data-keyword="meitu">
+      <div class="apk-card" style="padding: 16px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff;">
+        <img src="https://files.catbox.moe/y118ol.jpg" alt="meitu"
+             style="width: 100px; height: 100px; border-radius: 15px; margin-bottom: 10px;" />
+        <h3 style="font-size: 20px; margin: 5px 0;">Meitu Premium</h3>
+        <p style="font-size: 14px; color: #555;">shar 1 Bulan.</p>
+        <p style="color: green; margin: 5px 0;">Harga Reseller: Rp25.000</p>
+        <p style="color: green; margin-bottom: 15px;">Harga Public: Rp30.000</p>
+      </div>
+      <a href="https://t.me//ZyyTsune?text=Halo%20saya%20mau%20order%20Meitu%20Premium" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg">Order</a>  
+    </div>
+    <!-- Tambah produk lainnya di sini -->
+
+  </div>
+</section>
+<!-- TESTIMONI / FAQ / KONTAK / CARA BELI dibawah -->
+<aside class="bg-white rounded-xl p-4 shadow hidden col-span-3" id="reseller">
+  <h2 class="text-lg font-semibold mb-4">Testimoni & FAQ</h2>
+  <p class="italic text-sm">"Untung harian dari jualan APK ini mantap banget!"</p>
+  <p class="text-xs text-gray-500">— @ZyyTsune</p>
+  <ul class="list-disc ml-5 text-sm text-gray-600 mt-2">
+    <li>Cara order mudah via Telegram/Whatsapp</li>
+    <li>Bisa dropship dan tanpa watermark</li>
+    <li>Update rutin setiap minggu</li>
+  </ul>
+</aside>
+
+<section id="kontak" class="bg-white rounded-xl p-4 shadow hidden col-span-3">
+  <h2 class="text-lg font-semibold mb-2">Informasi Owner</h2>
+  <p class="text-sm">TELEGRAM: <a href="https://t.me/ZyyTsune" class="text-blue-600 hover:underline" target="_blank">@ZyyTsune</a></p>
+  <p class="text-sm">CHANNEL: <a href="https://t.me/sectopedia" class="text-blue-600 hover:underline" target="_blank">@sectopedia</a></p>
+</section>
+
+<section id="cara-beli" class="bg-white rounded-xl p-4 shadow hidden col-span-3">
+  <h2 class="text-lg font-semibold mb-4">Cara Beli</h2>
+  <ol class="list-decimal ml-5 text-sm text-gray-700 space-y-1">
+    <li>Lihat web</li>
+    <li>Cari APK yang mau di-premiumkan</li>
+    <li>Klik Order</li>
+    <li>Chat seller</li>
+    <li>Tanya Stok Buat Yang Shar</li>
+    <li>Transfer</li>
+    <li>Proses</li>
+    <li>Kelar, Done</li>
+  </ol>
+</section>
+
+  </main>  <footer class="text-center text-sm text-gray-500 py-4">© 2025 ZYY Not Dev. All rights reserved.</footer>
+</div><!-- SCRIPT LOGIN --><script>
+  let isRegistering = false;
+
+  function toggleAuthMode() {
+    isRegistering = !isRegistering;
+    document.getElementById("auth-title").textContent = isRegistering ? "Daftar Akun" : "Login";
+    document.getElementById("auth-button").textContent = isRegistering ? "Daftar" : "Login";
+    document.getElementById("toggle-text").textContent = isRegistering ? "Sudah punya akun?" : "Belum punya akun?";
+    document.getElementById("toggle-link").textContent = isRegistering ? "Login di sini" : "Daftar di sini";
+  }
+
+  function handleAuth() {
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    if (!username || !password) {
+      alert("Username dan password wajib diisi.");
+      return;
+    }
+    const users = JSON.parse(localStorage.getItem("users") || "{}");
+    if (isRegistering) {
+      if (users[username]) {
+        alert("Username sudah terdaftar.");
+        return;
+      }
+      users[username] = password;
+      localStorage.setItem("users", JSON.stringify(users));
+    } else {
+      if (users[username] !== password) {
+        alert("Username atau password salah.");
+        return;
+      }
+    }
+    localStorage.setItem("resellerLogin", "true");
+    document.getElementById("auth-section").style.display = "none";
+    document.getElementById("main-site").style.display = "block";
+  }
+
+  function logout() {
+    localStorage.removeItem("resellerLogin");
+    location.reload();
+  }
+
+  window.onload = () => {
+    if (localStorage.getItem("resellerLogin") === "true") {
+      document.getElementById("auth-section").style.display = "none";
+      document.getElementById("main-site").style.display = "block";
+    }
+  }
+
+  function navigateTo(targetId) {
+    document.getElementById("welcome-section").style.display = "none";
+    document.getElementById("back-logout-section").classList.remove("hidden");
+
+    ["produk", "reseller", "cara-beli", "kontak"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.add("hidden");
+    });
+
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.classList.remove("hidden");
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  function showWelcome() {
+    document.getElementById("welcome-section").style.display = "block";
+    document.getElementById("back-logout-section").classList.add("hidden");
+    ["produk", "reseller", "cara-beli", "kontak"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.add("hidden");
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("search-apk");
+    const produkList = document.getElementById("produk-list");
+
+    if (searchInput && produkList) {
+      searchInput.addEventListener("input", function () {
+        const keyword = this.value.toLowerCase();
+        const cards = produkList.querySelectorAll(".produk-item");
+
+        cards.forEach(card => {
+          const dataKeyword = card.getAttribute("data-keyword") || "";
+          card.style.display = dataKeyword.includes(keyword) ? "block" : "none";
+        });
+      });
+    }
+  });
+</script>
+</body>
+</html>
